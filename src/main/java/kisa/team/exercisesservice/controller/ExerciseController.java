@@ -2,7 +2,6 @@ package kisa.team.exercisesservice.controller;
 
 import kisa.team.exercisesservice.dto.ExerciseDto;
 import kisa.team.exercisesservice.dto.rc.RCSentenceDTO;
-import kisa.team.exercisesservice.model.Exercise;
 import kisa.team.exercisesservice.service.ExerciseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -21,8 +20,9 @@ public class ExerciseController {
         this.exerciseService = exerciseService;
     }
 
+    @CrossOrigin
     @GetMapping(value = "/exercises")
-    public ResponseEntity<List<ExerciseDto>> getByTitle(@RequestParam(name = "title") String title){
+    public ResponseEntity<List<ExerciseDto>> getByTitle(@RequestParam(name = "title",defaultValue = "") String title){
         return ResponseEntity.ok(exerciseService.getExercisesDtoByTitleContains(title));
     }
     @GetMapping(value = "/exercise/{id}")
