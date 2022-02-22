@@ -1,4 +1,4 @@
-package kisa.team.exercisesservice.dto;
+package kisa.team.exercisesservice.dto.rc;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

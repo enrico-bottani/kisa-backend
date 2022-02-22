@@ -4,7 +4,7 @@ import com.fasterxml.jackson.core.Version;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import kisa.team.exercisesservice.dto.ExerciseDto;
-import kisa.team.exercisesservice.dto.TodoDTO;
+import kisa.team.exercisesservice.dto.rc.TodoDTO;
 import kisa.team.exercisesservice.dto.rc.assignables.AssignableDTO;
 
 import java.io.IOException;

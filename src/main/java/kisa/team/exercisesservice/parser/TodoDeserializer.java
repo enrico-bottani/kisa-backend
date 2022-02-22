@@ -8,7 +8,7 @@ import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.module.SimpleModule;
-import kisa.team.exercisesservice.dto.TodoDTO;
+import kisa.team.exercisesservice.dto.rc.TodoDTO;
 import kisa.team.exercisesservice.dto.rc.assignables.AssignableDTO;
 import kisa.team.exercisesservice.dto.rc.RCSentenceDTO;
 

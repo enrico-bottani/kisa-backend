@@ -1,6 +1,6 @@
 package kisa.team.exercisesservice.dto;
 
-import kisa.team.exercisesservice.model.sentence.Todo;
+import kisa.team.exercisesservice.dto.rc.TodoDTO;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

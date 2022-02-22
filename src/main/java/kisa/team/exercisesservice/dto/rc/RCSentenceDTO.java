@@ -1,6 +1,5 @@
 package kisa.team.exercisesservice.dto.rc;
 
-import kisa.team.exercisesservice.dto.TodoDTO;
 import kisa.team.exercisesservice.dto.rc.assignables.AssignableDTO;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,4 +13,5 @@ import java.util.List;
 @NoArgsConstructor
 public class RCSentenceDTO extends TodoDTO {
     List<AssignableDTO> assignables;
+    List<AnswerIndexer> answerMap;
 }
