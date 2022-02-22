@@ -1,7 +1,7 @@
 package kisa.team.exercisesservice.dto.rc;
 
 import kisa.team.exercisesservice.dto.TodoDTO;
-import kisa.team.exercisesservice.model.assignable.Assignable;
+import kisa.team.exercisesservice.dto.rc.assignables.AssignableDTO;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

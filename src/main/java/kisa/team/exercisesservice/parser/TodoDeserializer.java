@@ -2,18 +2,18 @@ package kisa.team.exercisesservice.parser;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.ObjectCodec;
+import com.fasterxml.jackson.core.Version;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
+import com.fasterxml.jackson.databind.module.SimpleModule;
 import kisa.team.exercisesservice.dto.TodoDTO;
-import kisa.team.exercisesservice.dto.rc.AssignableDTO;
+import kisa.team.exercisesservice.dto.rc.assignables.AssignableDTO;
 import kisa.team.exercisesservice.dto.rc.RCSentenceDTO;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class TodoDeserializer extends StdDeserializer<TodoDTO> {
     public TodoDeserializer() {
@@ -40,6 +40,11 @@ public class TodoDeserializer extends StdDeserializer<TodoDTO> {
                 rcSentence.setPosition(position);
                 rcSentence.setType(type);
                 var mapper = new ObjectMapper();
+                SimpleModule module =
+                        new SimpleModule("CustomCarDeserializer", new Version(1, 0, 0, null, null, null));
+
+                module.addDeserializer(AssignableDTO.class, new AssignableDTOSerializer());
+                mapper.registerModule(module);
                 rcSentence.setAssignables(Arrays.asList(
                         mapper.treeToValue(
                                 node.get("assignables"), AssignableDTO[].class)));
