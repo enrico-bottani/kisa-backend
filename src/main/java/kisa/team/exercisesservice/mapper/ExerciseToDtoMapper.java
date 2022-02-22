@@ -7,6 +7,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class ExerciseToDtoMapper {
     public ExerciseDto map(Exercise e){
-        return ExerciseDto.builder().id(e.getId()).title(e.getTitle()).todos(e.getTodos()).build();
+        return ExerciseDto.builder().id(e.getId()).title(e.getTitle()).build();
     }
 }

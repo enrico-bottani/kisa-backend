@@ -22,5 +22,6 @@ public class Todo {
 
     @Column(name = "ID", updatable = false)
     int id;
+    int position;
     String type="none";
 }
