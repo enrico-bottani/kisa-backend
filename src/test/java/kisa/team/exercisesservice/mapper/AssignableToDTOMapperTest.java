@@ -5,22 +5,12 @@ import kisa.team.exercisesservice.dto.rc.assignables.StringConstantDTO;
 import kisa.team.exercisesservice.model.assignable.Assignable;
 import kisa.team.exercisesservice.model.assignable.AssignableType;
 import kisa.team.exercisesservice.model.assignable.answerable.RCAnswerable;
-import kisa.team.exercisesservice.model.assignable.answerable.SingleChoiceSentenceChoice;
+import kisa.team.exercisesservice.model.assignable.answerable.RCAnswerableItem;
 import kisa.team.exercisesservice.model.assignable.constant.StringConstant;
-import kisa.team.exercisesservice.model.todo.RCSentence;
-import kisa.team.exercisesservice.model.todo.Todo;
-import kisa.team.exercisesservice.model.todo.TodoType;
-import kisa.team.exercisesservice.parser.RCParser;
-import kisa.team.exercisesservice.parser.RCParserTest;
-import org.assertj.core.util.Lists;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -30,8 +20,8 @@ public class AssignableToDTOMapperTest {
 
     private static final Assignable ASSIGNABLE = new Assignable(ID);
 
-    private static final SingleChoiceSentenceChoice[] choices = {
-            new SingleChoiceSentenceChoice(0, "answer1"),new SingleChoiceSentenceChoice(1, "answer2")};
+    private static final RCAnswerableItem[] choices = {
+            new RCAnswerableItem(0, "answer1"),new RCAnswerableItem(1, "answer2")};
     public static final Assignable RC_ASSIGN = new RCAnswerable(ID, Arrays.asList(choices));
 
     public static final String STRING_VALUE = "2'0odaSOD)";
@@ -64,7 +54,7 @@ public class AssignableToDTOMapperTest {
     @Test
     public void rcAssignableGetChoices() throws IOException {
         var e = AssignableToDTOMapper.map(RC_ASSIGN);
-        var actual = Arrays.stream(choices).map(SingleChoiceSentenceChoice::getValue)
+        var actual = Arrays.stream(choices).map(RCAnswerableItem::getValue)
                 .toArray(String[]::new);
         assertTrue(Arrays.equals(((RCAnswerableDTO) e).getChoices(), actual));
     }

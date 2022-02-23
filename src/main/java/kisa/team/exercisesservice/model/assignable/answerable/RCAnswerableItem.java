@@ -14,10 +14,10 @@ import javax.persistence.*;
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @Table(name = "ASSIGN_SINGLE_CHOICE_ANSWERABLE_ITEM")
-public class SingleChoiceSentenceChoice {
+public class RCAnswerableItem {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "ID", updatable = false)
-    int id;
+    long id;
     String value;
 }

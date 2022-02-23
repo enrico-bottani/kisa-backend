@@ -4,7 +4,7 @@ import kisa.team.exercisesservice.model.Exercise;
 import kisa.team.exercisesservice.model.Teacher;
 import kisa.team.exercisesservice.model.assignable.Assignable;
 import kisa.team.exercisesservice.model.assignable.answerable.RCAnswerable;
-import kisa.team.exercisesservice.model.assignable.answerable.SingleChoiceSentenceChoice;
+import kisa.team.exercisesservice.model.assignable.answerable.RCAnswerableItem;
 import kisa.team.exercisesservice.model.assignable.constant.StringConstant;
 import kisa.team.exercisesservice.model.todo.RCSentence;
 import kisa.team.exercisesservice.model.todo.Todo;
@@ -31,11 +31,11 @@ public class DemoContentConfiguration {
                                         ExerciseService exerciseService,
                                         ExerciseRepository exerciseRepository) {
         return args -> {
-            SingleChoiceSentenceChoice singleChoiceSentenceChoice = new SingleChoiceSentenceChoice();
-            singleChoiceSentenceChoice.setId(1);
-            singleChoiceSentenceChoice.setValue("We are");
-            var choices = new ArrayList<SingleChoiceSentenceChoice>();
-            choices.add(singleChoiceSentenceChoice);
+            RCAnswerableItem RCAnswerableItem = new RCAnswerableItem();
+            RCAnswerableItem.setId(1);
+            RCAnswerableItem.setValue("We are");
+            var choices = new ArrayList<RCAnswerableItem>();
+            choices.add(RCAnswerableItem);
             singleChoiceSentenceChoiceRepository.saveAll(choices);
 
             // BUILD SENTENCE ELEMENTS
