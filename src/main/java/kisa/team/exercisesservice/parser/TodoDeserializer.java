@@ -8,6 +8,8 @@ import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.module.SimpleModule;
+import kisa.team.exercisesservice.dto.AnswerSheetItemDTO;
+import kisa.team.exercisesservice.dto.rc.AnswerIndexerDTO;
 import kisa.team.exercisesservice.dto.rc.TodoDTO;
 import kisa.team.exercisesservice.dto.rc.assignables.AssignableDTO;
 import kisa.team.exercisesservice.dto.rc.RCSentenceDTO;
@@ -48,6 +50,12 @@ public class TodoDeserializer extends StdDeserializer<TodoDTO> {
                 rcSentence.setAssignables(Arrays.asList(
                         mapper.treeToValue(
                                 node.get("assignables"), AssignableDTO[].class)));
+                rcSentence.setAnswerMap(Arrays.asList(
+                        mapper.treeToValue(
+                                node.get("answerMap"), AnswerIndexerDTO[].class)));
+                rcSentence.setAnswerSheet(Arrays.asList(
+                        mapper.treeToValue(
+                                node.get("answerSheet"), AnswerSheetItemDTO[].class)));
                 return rcSentence;
             }
 

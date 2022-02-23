@@ -1,4 +1,4 @@
-package kisa.team.exercisesservice.model.sentence;
+package kisa.team.exercisesservice.model.todo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,3 +25,4 @@ public class Todo {
     int position;
     String type="none";
 }
+

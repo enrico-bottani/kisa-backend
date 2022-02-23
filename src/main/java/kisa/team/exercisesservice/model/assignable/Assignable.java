@@ -8,7 +8,6 @@ import javax.persistence.*;
 
 
 @NoArgsConstructor
-@AllArgsConstructor
 @Data
 
 
@@ -16,6 +15,12 @@ import javax.persistence.*;
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "ASSIGN__")
 public class Assignable {
+
+    public Assignable(Long id, String type){
+        this.id = id;
+        this.type = type;
+    }
+
     @Id
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
@@ -24,4 +29,8 @@ public class Assignable {
     @Column(name = "ID", updatable = false)
     private Long id;
     private String type="none";
+
+    public static String RCAnswerable = "RCA";
+    public static String String = "STR";
+    public static String Undefined = "UND";
 }

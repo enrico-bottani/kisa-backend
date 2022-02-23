@@ -1,4 +1,4 @@
-package kisa.team.exercisesservice.model.sentence;
+package kisa.team.exercisesservice.model.todo;
 
 import kisa.team.exercisesservice.model.assignable.Assignable;
 import lombok.AllArgsConstructor;
@@ -21,5 +21,8 @@ public class RCSentence extends Todo {
     @OneToMany
     @JoinColumn(name = "SENTENCE_ID", referencedColumnName = "ID")
     List<Assignable> assignables;
-    String type="RCT";
+    @OneToMany
+    @JoinColumn(name = "SENTENCE_ID", referencedColumnName = "ID")
+    List<AnswerSheetItem> answerSheet;
+    String type = TodoType.RC_SENTENCE_TYPE.toString();
 }

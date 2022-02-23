@@ -1,6 +1,6 @@
 package kisa.team.exercisesservice.model;
 
-import kisa.team.exercisesservice.model.sentence.Todo;
+import kisa.team.exercisesservice.model.todo.Todo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

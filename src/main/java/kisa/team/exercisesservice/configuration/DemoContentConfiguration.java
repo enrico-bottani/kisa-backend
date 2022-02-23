@@ -3,11 +3,11 @@ package kisa.team.exercisesservice.configuration;
 import kisa.team.exercisesservice.model.Exercise;
 import kisa.team.exercisesservice.model.Teacher;
 import kisa.team.exercisesservice.model.assignable.Assignable;
-import kisa.team.exercisesservice.model.assignable.answerable.SingleChoiceAnswerable;
+import kisa.team.exercisesservice.model.assignable.answerable.RCAnswerable;
 import kisa.team.exercisesservice.model.assignable.answerable.SingleChoiceSentenceChoice;
 import kisa.team.exercisesservice.model.assignable.constant.StringConstant;
-import kisa.team.exercisesservice.model.sentence.RCSentence;
-import kisa.team.exercisesservice.model.sentence.Todo;
+import kisa.team.exercisesservice.model.todo.RCSentence;
+import kisa.team.exercisesservice.model.todo.Todo;
 import kisa.team.exercisesservice.repository.AssignableRepository;
 import kisa.team.exercisesservice.repository.SingleChoiceSentenceChoiceRepository;
 import kisa.team.exercisesservice.repository.TeacherRepository;
@@ -40,7 +40,7 @@ public class DemoContentConfiguration {
 
             // BUILD SENTENCE ELEMENTS
             List<Assignable> singleChoiceAnswerables = new ArrayList<>();
-            var singleChoiceAnswerable = new SingleChoiceAnswerable();
+            var singleChoiceAnswerable = new RCAnswerable();
             singleChoiceAnswerable.setChoices(choices);
             singleChoiceAnswerables.add(singleChoiceAnswerable);
             var assignable = new StringConstant();

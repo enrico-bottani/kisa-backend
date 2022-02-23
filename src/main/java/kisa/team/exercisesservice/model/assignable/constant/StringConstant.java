@@ -16,8 +16,12 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "ASSIGN_STRING_CONSTANT")
 public class StringConstant extends Assignable {
-    @Id
-    Long id;
+
+    public StringConstant(Long id, String type, String value){
+        super(id,type);
+        this.value = value;
+    }
+
     String value;
     private String type="String";
 }

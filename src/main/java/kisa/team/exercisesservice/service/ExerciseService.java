@@ -2,7 +2,7 @@ package kisa.team.exercisesservice.service;
 
 import kisa.team.exercisesservice.dto.ExerciseDto;
 import kisa.team.exercisesservice.dto.rc.RCSentenceDTO;
-import kisa.team.exercisesservice.mapper.ExerciseToDtoMapper;
+import kisa.team.exercisesservice.mapper.ExerciseToDTOMapper;
 import kisa.team.exercisesservice.repository.exercise.ExerciseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,10 +14,10 @@ import java.util.stream.Collectors;
 @Service
 public class ExerciseService {
 
-    ExerciseToDtoMapper exerciseToDtoMapper;
+    ExerciseToDTOMapper exerciseToDtoMapper;
     ExerciseRepository exerciseRepository;
     @Autowired
-    ExerciseService(ExerciseToDtoMapper exerciseToDtoMapper,ExerciseRepository exerciseRepository){
+    ExerciseService(ExerciseToDTOMapper exerciseToDtoMapper, ExerciseRepository exerciseRepository){
         this.exerciseRepository = exerciseRepository;
         this.exerciseToDtoMapper = exerciseToDtoMapper;
     }

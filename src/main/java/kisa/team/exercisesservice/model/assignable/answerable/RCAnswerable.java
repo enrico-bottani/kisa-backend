@@ -10,13 +10,18 @@ import java.util.List;
 
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 
 @Entity
 @Table(name = "ASSIGN_SINGLE_CHOICE_ANSWERABLE")
-public class SingleChoiceAnswerable extends Assignable {
+public class RCAnswerable extends Assignable {
+
+    public RCAnswerable(Long id, String type, List<SingleChoiceSentenceChoice> choices){
+        super(id,type);
+        this.choices = choices;
+    }
+
     @OneToMany
     @JoinColumn(name = "SINGLE_CHOICE_ANSWERABLE", referencedColumnName = "ID")
     List<SingleChoiceSentenceChoice> choices;
-    private String type="SingleChoiceAnswerable";
+    private String type=Assignable.RCAnswerable;
 }
