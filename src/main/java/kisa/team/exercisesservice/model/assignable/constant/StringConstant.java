@@ -1,6 +1,7 @@
 package kisa.team.exercisesservice.model.assignable.constant;
 
 import kisa.team.exercisesservice.model.assignable.Assignable;
+import kisa.team.exercisesservice.model.assignable.AssignableType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,11 +18,11 @@ import javax.persistence.Table;
 @Table(name = "ASSIGN_STRING_CONSTANT")
 public class StringConstant extends Assignable {
 
-    public StringConstant(Long id, String type, String value){
-        super(id,type);
+    public StringConstant(Long id, String value){
+        super(id);
         this.value = value;
     }
 
     String value;
-    private String type="String";
+    private final String type = AssignableType.STRING.toString();
 }

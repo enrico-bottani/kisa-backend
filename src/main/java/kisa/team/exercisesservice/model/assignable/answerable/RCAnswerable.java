@@ -1,6 +1,7 @@
 package kisa.team.exercisesservice.model.assignable.answerable;
 
 import kisa.team.exercisesservice.model.assignable.Assignable;
+import kisa.team.exercisesservice.model.assignable.AssignableType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,13 +16,13 @@ import java.util.List;
 @Table(name = "ASSIGN_SINGLE_CHOICE_ANSWERABLE")
 public class RCAnswerable extends Assignable {
 
-    public RCAnswerable(Long id, String type, List<SingleChoiceSentenceChoice> choices){
-        super(id,type);
+    public RCAnswerable(Long id, List<SingleChoiceSentenceChoice> choices){
+        super(id);
         this.choices = choices;
     }
 
     @OneToMany
     @JoinColumn(name = "SINGLE_CHOICE_ANSWERABLE", referencedColumnName = "ID")
     List<SingleChoiceSentenceChoice> choices;
-    private String type=Assignable.RCAnswerable;
+    private String type= AssignableType.RC_ANSWERABLE.toString();
 }

@@ -16,9 +16,8 @@ import javax.persistence.*;
 @Table(name = "ASSIGN__")
 public class Assignable {
 
-    public Assignable(Long id, String type){
+    public Assignable(Long id){
         this.id = id;
-        this.type = type;
     }
 
     @Id
@@ -28,9 +27,6 @@ public class Assignable {
     )
     @Column(name = "ID", updatable = false)
     private Long id;
-    private String type="none";
+    private final String type = AssignableType.Undefined.toString();
 
-    public static String RCAnswerable = "RCA";
-    public static String String = "STR";
-    public static String Undefined = "UND";
 }
