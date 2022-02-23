@@ -27,14 +27,15 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class AssignableToDTOMapperTest {
     private static final long ID = 12;
-    private static final String STRING_VALUE = "2'0odaSOD)";
-    private static final SingleChoiceSentenceChoice[] choices = {
-            new SingleChoiceSentenceChoice(0, "test"),new SingleChoiceSentenceChoice(1, "test2")};
-
 
     private static final Assignable ASSIGNABLE = new Assignable(ID);
-    private static final Assignable STRING_ASSIGN = new StringConstant(ID, STRING_VALUE);
-    private static final Assignable RC_ASSIGN = new RCAnswerable(ID, Arrays.asList(choices));
+
+    private static final SingleChoiceSentenceChoice[] choices = {
+            new SingleChoiceSentenceChoice(0, "answer1"),new SingleChoiceSentenceChoice(1, "answer2")};
+    public static final Assignable RC_ASSIGN = new RCAnswerable(ID, Arrays.asList(choices));
+
+    public static final String STRING_VALUE = "2'0odaSOD)";
+    public static final Assignable STRING_ASSIGN = new StringConstant(ID, STRING_VALUE);
 
     @Test
     public void genericAssignableGetType() throws IOException {

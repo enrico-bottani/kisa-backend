@@ -9,15 +9,21 @@ import javax.persistence.*;
 import java.util.List;
 
 @NoArgsConstructor
-@AllArgsConstructor
 @Data
 
 
 @Entity
 @Table(name = "TODO_RC_SENTENCE")
 public class RCSentence extends Todo {
-    int number;
+    public RCSentence(long id,int position,
+                      List<Assignable> assignables,
+                      List<AnswerSheetItem> answerSheet){
+        super(id,position);
+        this.assignables = assignables;
+        this.answerSheet = answerSheet;
+    }
 
+    int number;
     @OneToMany
     @JoinColumn(name = "SENTENCE_ID", referencedColumnName = "ID")
     List<Assignable> assignables;
