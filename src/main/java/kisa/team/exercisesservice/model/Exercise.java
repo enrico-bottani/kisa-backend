@@ -2,6 +2,7 @@ package kisa.team.exercisesservice.model;
 
 import kisa.team.exercisesservice.model.todo.Todo;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,7 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @Data
 
-
+@Builder
 @Entity
 @Table(name = "EXERCISE")
 public class Exercise {

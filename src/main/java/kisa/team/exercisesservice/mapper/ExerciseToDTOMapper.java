@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 @Component
 public class ExerciseToDTOMapper {
-    public ExerciseDto map(Exercise e){
+    public static ExerciseDto map(Exercise e){
         return ExerciseDto.builder()
                 .id(e.getId())
                 .title(e.getTitle())

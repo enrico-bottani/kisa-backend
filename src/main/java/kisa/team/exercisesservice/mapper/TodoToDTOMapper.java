@@ -19,6 +19,7 @@ public class TodoToDTOMapper {
             var answerSheet = rcSentence.getAnswerSheet().stream().map(AnswerSheetToDTOMapper::map).collect(Collectors.toList());
             return new RCSentenceDTO(rcSentence.getType(), rcSentence.getPosition(),rcSentence.getId(), assignables, new ArrayList<>(), answerSheet);
         }
+
         return TodoDTO.builder().type(e.getType()).position(e.getPosition()).id(e.getId()).build();
     }
 }

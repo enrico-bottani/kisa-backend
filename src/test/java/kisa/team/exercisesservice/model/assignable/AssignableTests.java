@@ -1,10 +1,9 @@
 package kisa.team.exercisesservice.model.assignable;
 
 import kisa.team.exercisesservice.model.assignable.answerable.RCAnswerable;
+import kisa.team.exercisesservice.model.assignable.answerable.RCAnswerableTests;
 import kisa.team.exercisesservice.model.assignable.constant.StringConstant;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -15,7 +14,8 @@ public class AssignableTests {
                 new StringConstant(MOCK_STRING_HELLO_WORLD);
         public static final long MOCK_RC_ANSWERABLE_ON_OFF_ID = 123L;
         public static final RCAnswerable MOCK_RC_ANSWERABLE_ON_OFF =
-                new RCAnswerable(MOCK_RC_ANSWERABLE_ON_OFF_ID, new ArrayList<>());
+                new RCAnswerable(MOCK_RC_ANSWERABLE_ON_OFF_ID, RCAnswerableTests.MOCKS.RC_ANSWERABLE.getChoices());
+
     }
 
     @Test
@@ -28,4 +28,9 @@ public class AssignableTests {
         assertEquals(MOCKS.MOCK_RC_ANSWERABLE_ON_OFF_ID, MOCKS.MOCK_RC_ANSWERABLE_ON_OFF.getId());
     }
 
+    @Test
+    public void getMockRCSentenceOnOffAnswerableTest() {
+        assertEquals(RCAnswerableTests.MOCKS.answerableChoices.length,
+                MOCKS.MOCK_RC_ANSWERABLE_ON_OFF.getChoices().size());
+    }
 }
