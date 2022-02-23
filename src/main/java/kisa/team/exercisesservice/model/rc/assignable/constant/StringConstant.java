@@ -17,8 +17,8 @@ import javax.persistence.Table;
 @Table(name = "ASSIGN_STRING_CONSTANT")
 public class StringConstant extends Assignable {
 
-    public StringConstant(Long id, String value){
-        super(id);
+    public StringConstant(int _order, String value){
+        this._order = _order;
         this.value = value;
     }
 

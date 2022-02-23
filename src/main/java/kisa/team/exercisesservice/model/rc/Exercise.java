@@ -31,7 +31,6 @@ public class Exercise {
     private Long id;
     @Column(name = "TITLE", nullable = false)
     private String title;
-    private int selected;
     @OneToMany
     @JoinColumn(name = "EXERCISE_ID", referencedColumnName = "ID")
     private List<Todo> todos;

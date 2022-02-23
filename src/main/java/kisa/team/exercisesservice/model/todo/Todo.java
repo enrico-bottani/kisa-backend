@@ -1,6 +1,7 @@
 package kisa.team.exercisesservice.model.todo;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -9,6 +10,7 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 
+@Builder
 @Entity
 @Table(name = "TODO__")
 @Inheritance(strategy = InheritanceType.JOINED)

@@ -17,15 +17,15 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class AssignableMapperTest {
     private static final long ID = 12;
-
-    private static final Assignable ASSIGNABLE = new Assignable(ID);
+    private static final int ORDER = 0;
+    private static final Assignable ASSIGNABLE = new Assignable();
 
     private static final RCAnswerableItem[] choices = {
             new RCAnswerableItem(0, "answer1"),new RCAnswerableItem(1, "answer2")};
-    public static final Assignable RC_ASSIGN = new RCAnswerable(ID, Arrays.asList(choices));
+    public static final Assignable RC_ASSIGN = new RCAnswerable(ORDER, Arrays.asList(choices));
 
     public static final String STRING_VALUE = "2'0odaSOD)";
-    public static final Assignable STRING_ASSIGN = new StringConstant(ID, STRING_VALUE);
+    public static final Assignable STRING_ASSIGN = new StringConstant(STRING_VALUE);
 
     @Test
     public void genericAssignableGetType() throws IOException {

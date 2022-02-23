@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
-public class TodoToDTOMapperTest {
+public class TodoMapperTest {
     Todo todo = new Todo();
     Todo todoId1Pos41 = new Todo(1, 41);
 
@@ -27,37 +27,37 @@ public class TodoToDTOMapperTest {
 
     @Test
     public void genericTodoGetType() throws IOException {
-        assertEquals(TodoType.TODO.toString(), TodoToDTOMapper.map(todo).getType());
+        assertEquals(TodoType.TODO.toString(), TodoMapper.map(todo).getType());
     }
 
     @Test
     public void genericTodoGetId() throws IOException {
-        assertEquals(1, TodoToDTOMapper.map(todoId1Pos41).getId());
+        assertEquals(1, TodoMapper.map(todoId1Pos41).getId());
     }
 
     @Test
     public void genericTodoGetPosition() throws IOException {
-        assertEquals(41, TodoToDTOMapper.map(todoId1Pos41).getPosition());
+        assertEquals(41, TodoMapper.map(todoId1Pos41).getPosition());
     }
 
     @Test
     public void emptyRCSentenceGetType() throws IOException {
-        assertEquals(TodoType.RC_SENTENCE_TYPE.toString(), TodoToDTOMapper.map(EMPTY_RC_SENTENCE).getType());
+        assertEquals(TodoType.RC_SENTENCE_TYPE.toString(), TodoMapper.map(EMPTY_RC_SENTENCE).getType());
     }
 
     @Test
     public void emptyRCSentenceGetAnswerSheet() throws IOException {
-        assertEquals(0, ((RCSentenceDTO) TodoToDTOMapper.map(EMPTY_RC_SENTENCE)).getAnswerSheet().size());
+        assertEquals(0, ((RCSentenceDTO) TodoMapper.map(EMPTY_RC_SENTENCE)).getAnswerSheet().size());
     }
 
     @Test
     public void twoAssignRCSentenceGetAssignablesNumber() throws IOException {
-        assertEquals(2, ((RCSentenceDTO) TodoToDTOMapper.map(TWO_ASSIGN_RC_SENTENCE)).getAssignables().size());
+        assertEquals(2, ((RCSentenceDTO) TodoMapper.map(TWO_ASSIGN_RC_SENTENCE)).getAssignables().size());
     }
 
     @Test
     public void twoAssignRCSentenceGetStringAssignable1() throws IOException {
-        assertEquals(AssignableTests.MOCKS.MOCK_STRING_HELLO_WORLD, ((StringConstantDTO) ((RCSentenceDTO) TodoToDTOMapper
+        assertEquals(AssignableTests.MOCKS.MOCK_STRING_HELLO_WORLD, ((StringConstantDTO) ((RCSentenceDTO) TodoMapper
                 .map(TWO_ASSIGN_RC_SENTENCE)).getAssignables().get(0)).getValue());
     }
 

@@ -7,12 +7,20 @@ import org.springframework.stereotype.Component;
 import java.util.stream.Collectors;
 
 @Component
-public class ExerciseToDTOMapper {
-    public static ExerciseDto map(Exercise e){
+public class ExerciseMapper {
+    public static ExerciseDto map(Exercise e) {
         return ExerciseDto.builder()
                 .id(e.getId())
                 .title(e.getTitle())
-                .todos(e.getTodos().stream().map(TodoToDTOMapper::map)
+                .todos(e.getTodos().stream().map(TodoMapper::map)
+                        .collect(Collectors.toList()))
+                .build();
+    }
+
+    public static Exercise map(ExerciseDto e) {
+        return Exercise.builder().id(e.getId())
+                .title(e.getTitle())
+                .todos(e.getTodos().stream().map(TodoMapper::map)
                         .collect(Collectors.toList()))
                 .build();
     }

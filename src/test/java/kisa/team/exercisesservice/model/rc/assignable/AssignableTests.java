@@ -12,9 +12,9 @@ public class AssignableTests {
         public static final String MOCK_STRING_HELLO_WORLD = "Hello world";
         public static final StringConstant MOCK_STRING_CONSTANT_HELLO_WORLD =
                 new StringConstant(MOCK_STRING_HELLO_WORLD);
-        public static final long MOCK_RC_ANSWERABLE_ON_OFF_ID = 123L;
+        public static final int MOCK_RC_ANSWERABLE_ON_OFF_ORDER = 123;
         public static final RCAnswerable MOCK_RC_ANSWERABLE_ON_OFF =
-                new RCAnswerable(MOCK_RC_ANSWERABLE_ON_OFF_ID, RCAnswerableTests.MOCKS.RC_ANSWERABLE.getChoices());
+                new RCAnswerable(MOCK_RC_ANSWERABLE_ON_OFF_ORDER, RCAnswerableTests.MOCKS.RC_ANSWERABLE.getChoices());
 
     }
 
@@ -25,7 +25,7 @@ public class AssignableTests {
 
     @Test
     public void getMockRCSentenceOnOffIdTest() {
-        assertEquals(MOCKS.MOCK_RC_ANSWERABLE_ON_OFF_ID, MOCKS.MOCK_RC_ANSWERABLE_ON_OFF.getId());
+        assertEquals(MOCKS.MOCK_RC_ANSWERABLE_ON_OFF_ORDER, MOCKS.MOCK_RC_ANSWERABLE_ON_OFF.getId());
     }
 
     @Test

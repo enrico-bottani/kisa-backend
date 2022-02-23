@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class RCAnswerableTests {
     public static class MOCKS {
         public static String[] answerableChoices = new String[]{"on", "at"};
-        public static RCAnswerable RC_ANSWERABLE = new RCAnswerable(1L, IntStream.range(0, answerableChoices.length)
+        public static RCAnswerable RC_ANSWERABLE = new RCAnswerable(1, IntStream.range(0, answerableChoices.length)
                 .mapToObj(i -> new RCAnswerableItem(i, answerableChoices[i])).collect(Collectors.toList()));
     }
 
