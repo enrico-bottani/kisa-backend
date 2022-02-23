@@ -31,7 +31,7 @@ public class Exercise {
     private Long id;
     @Column(name = "TITLE", nullable = false)
     private String title;
-    @OneToMany
+    @OneToMany(cascade = {CascadeType.ALL})
     @JoinColumn(name = "EXERCISE_ID", referencedColumnName = "ID")
     private List<Todo> todos;
 }

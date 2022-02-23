@@ -21,7 +21,7 @@ public class RCAnswerable extends Assignable {
         this.choices = choices;
     }
 
-    @OneToMany
+    @OneToMany(cascade = {CascadeType.ALL})
     @JoinColumn(name = "SINGLE_CHOICE_ANSWERABLE", referencedColumnName = "ID")
     List<RCAnswerableItem> choices;
     private String type= AssignableType.RC_ANSWERABLE.toString();

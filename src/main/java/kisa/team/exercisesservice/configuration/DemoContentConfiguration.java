@@ -24,41 +24,30 @@ import java.util.List;
 @Configuration
 public class DemoContentConfiguration {
     @Bean
-    CommandLineRunner commandLineRunner(TeacherRepository teacherRepository,
-                                        SingleChoiceSentenceChoiceRepository singleChoiceSentenceChoiceRepository,
-                                        AssignableRepository assignableRepository,
-                                        TodoRepository singleChoiceSentenceRepository,
-                                        ExerciseService exerciseService,
-                                        ExerciseRepository exerciseRepository) {
+    CommandLineRunner commandLineRunner(TeacherRepository teacherRepository) {
         return args -> {
-            RCAnswerableItem RCAnswerableItem = new RCAnswerableItem();
-            RCAnswerableItem.setId(1);
+            final RCAnswerableItem RCAnswerableItem = new RCAnswerableItem();
             RCAnswerableItem.setValue("We are");
-            var choices = new ArrayList<RCAnswerableItem>();
+            final var choices = new ArrayList<RCAnswerableItem>();
             choices.add(RCAnswerableItem);
-            singleChoiceSentenceChoiceRepository.saveAll(choices);
 
             // BUILD SENTENCE ELEMENTS
-            List<Assignable> singleChoiceAnswerables = new ArrayList<>();
-            var singleChoiceAnswerable = new RCAnswerable();
+            final List<Assignable> singleChoiceAnswerables = new ArrayList<>();
+            final var singleChoiceAnswerable = new RCAnswerable();
             singleChoiceAnswerable.setChoices(choices);
             singleChoiceAnswerables.add(singleChoiceAnswerable);
-            var assignable = new StringConstant();
+            final var assignable = new StringConstant();
             assignable.setValue("Test");
             singleChoiceAnswerables.add(assignable);
-            assignableRepository.saveAll(singleChoiceAnswerables);
 
             var singleChoiceSentence = new RCSentence();
             singleChoiceSentence.setAssignables(singleChoiceAnswerables);
             List<Todo> singleChoiceSentences = new ArrayList<>();
             singleChoiceSentences.add(singleChoiceSentence);
-            singleChoiceSentenceRepository.saveAll(singleChoiceSentences);
 
             var ex = new Exercise();
             ex.setTitle("Welcome");
             ex.setTodos(singleChoiceSentences);
-
-            exerciseRepository.save(ex);
 
             var sue = new Teacher();
             sue.setProfileName("Sue");

@@ -23,10 +23,10 @@ public class RCSentence extends Todo {
     }
 
     int number;
-    @OneToMany
+    @OneToMany(cascade = {CascadeType.ALL})
     @JoinColumn(name = "SENTENCE_ID", referencedColumnName = "ID")
     List<Assignable> assignables;
-    @OneToMany
+    @OneToMany(cascade = {CascadeType.ALL})
     @JoinColumn(name = "SENTENCE_ID", referencedColumnName = "ID")
     List<AnswerSheetItem> answerSheet;
     String type = TodoType.RC_SENTENCE_TYPE.toString();

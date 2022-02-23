@@ -33,7 +33,7 @@ public class Teacher {
     private Long id;
     @Column(name = "PROFILE_NAME", nullable = false)
     private String profileName;
-    @OneToMany
+    @OneToMany(cascade = {CascadeType.ALL})
     @JoinColumn(name = "TEACHER_ID", referencedColumnName = "ID")
     private List<Exercise> exercises;
 }
