@@ -8,12 +8,17 @@ import javax.persistence.*;
 
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 
 @Entity
 @Table(name = "TODO__")
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Todo {
+
+    public Todo(long id,int position){
+        this.id = id;
+        this.position = position;
+    }
+
     @Id
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
@@ -21,8 +26,8 @@ public class Todo {
     )
 
     @Column(name = "ID", updatable = false)
-    int id;
+    long id;
     int position;
-    String type="none";
+    private final String type=TodoType.TODO.toString();
 }
 
