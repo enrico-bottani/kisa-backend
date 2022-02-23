@@ -14,9 +14,11 @@ import java.util.stream.Collectors;
 @Service
 public class ExerciseService {
 
-    ExerciseToDTOMapper exerciseToDtoMapper;
     ExerciseRepository exerciseRepository;
-
+    @Autowired
+    public ExerciseService(ExerciseRepository exerciseRepository){
+        this.exerciseRepository = exerciseRepository;
+    }
     public List<ExerciseDto> getExercisesDtoByTitleContains(String title){
        return exerciseRepository.getExercisesByTitleContains(title).stream()
                .map(ExerciseToDTOMapper::map)

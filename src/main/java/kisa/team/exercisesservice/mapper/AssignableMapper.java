@@ -9,19 +9,18 @@ import kisa.team.exercisesservice.model.assignable.answerable.RCAnswerable;
 import kisa.team.exercisesservice.model.assignable.answerable.RCAnswerableItem;
 import kisa.team.exercisesservice.model.assignable.constant.StringConstant;
 
-public class AssignableToDTOMapper {
+public class AssignableMapper {
     public static AssignableDTO map(Assignable assignable) {
         if (assignable.getType().equals(AssignableType.RC_ANSWERABLE.toString())) {
             RCAnswerable rc = (RCAnswerable) assignable;
-            return new RCAnswerableDTO(rc.getType(),
-                    rc.getChoices().stream().map(RCAnswerableItem::getValue)
+            return new RCAnswerableDTO(rc.getChoices().stream().map(RCAnswerableItem::getValue)
                             .toArray(String[]::new));
         } else if (assignable.getType().equals(AssignableType.STRING.toString())){
             StringConstant st = (StringConstant) assignable;
-            return new StringConstantDTO(assignable.getType(), st.getValue());
+            return new StringConstantDTO(st.getValue());
         }
         else {
-            return new AssignableDTO(assignable.getType());
+            return new AssignableDTO();
         }
     }
 }

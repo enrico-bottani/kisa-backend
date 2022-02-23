@@ -31,16 +31,16 @@ public class AssignableDTOSerializer extends StdDeserializer<AssignableDTO> {
         node = codec.readTree(parser);
         var type = node.get("type").asText();
         if (type.equals("STR")) {
-            return new StringConstantDTO(type, node.get("value").asText());
+            return new StringConstantDTO( node.get("value").asText());
         } else if (type.equals("RCA")) {
             List<String> choices = new ArrayList<>();
             var choicesIterator = node.get("choices").elements();
             while (choicesIterator.hasNext()) {
                 choices.add(choicesIterator.next().asText());
             }
-            return new RCAnswerableDTO(type, (choices).toArray(new String[choices.size()]));
+            return new RCAnswerableDTO((choices).toArray(new String[choices.size()]));
         }
 
-        return new AssignableDTO(type);
+        return new AssignableDTO();
     }
 }

@@ -15,7 +15,7 @@ import java.util.Arrays;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class AssignableToDTOMapperTest {
+public class AssignableMapperTest {
     private static final long ID = 12;
 
     private static final Assignable ASSIGNABLE = new Assignable(ID);
@@ -29,31 +29,31 @@ public class AssignableToDTOMapperTest {
 
     @Test
     public void genericAssignableGetType() throws IOException {
-        var e = AssignableToDTOMapper.map(ASSIGNABLE);
+        var e = AssignableMapper.map(ASSIGNABLE);
         assertEquals(AssignableType.Undefined.toString(), e.getType());
     }
 
     @Test
     public void stringAssignableGetType() throws IOException {
-        var e = AssignableToDTOMapper.map(STRING_ASSIGN);
+        var e = AssignableMapper.map(STRING_ASSIGN);
         assertEquals(AssignableType.STRING.toString(), e.getType());
     }
 
     @Test
     public void stringAssignableGetStringValue() throws IOException {
-        var e = AssignableToDTOMapper.map(STRING_ASSIGN);
+        var e = AssignableMapper.map(STRING_ASSIGN);
         assertEquals(STRING_VALUE, ((StringConstantDTO) e).getValue());
     }
 
     @Test
     public void rcAssignableGetType() throws IOException {
-        var e = AssignableToDTOMapper.map(RC_ASSIGN);
+        var e = AssignableMapper.map(RC_ASSIGN);
         assertEquals(AssignableType.RC_ANSWERABLE.toString(), ((RCAnswerableDTO) e).getType());
     }
 
     @Test
     public void rcAssignableGetChoices() throws IOException {
-        var e = AssignableToDTOMapper.map(RC_ASSIGN);
+        var e = AssignableMapper.map(RC_ASSIGN);
         var actual = Arrays.stream(choices).map(RCAnswerableItem::getValue)
                 .toArray(String[]::new);
         assertTrue(Arrays.equals(((RCAnswerableDTO) e).getChoices(), actual));

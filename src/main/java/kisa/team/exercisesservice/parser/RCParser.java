@@ -11,7 +11,21 @@ import java.io.IOException;
 import java.net.URL;
 
 public class RCParser {
-    public static ExerciseDto parseFromJSON(String path) throws IOException {
+    public static ExerciseDto parseFromFile(String path) throws IOException {
+        ObjectMapper mapper = getObjectMapper();
+
+        ClassLoader classloader = Thread.currentThread().getContextClassLoader();
+        URL is = classloader.getResource(path);
+        return mapper.readValue(is, ExerciseDto.class);
+    }
+    public static ExerciseDto parseFromJSON(String jsonString) throws IOException {
+        ObjectMapper mapper = getObjectMapper();
+
+        ClassLoader classloader = Thread.currentThread().getContextClassLoader();
+        return mapper.readValue(jsonString, ExerciseDto.class);
+    }
+
+    private static ObjectMapper getObjectMapper() {
         ObjectMapper mapper = new ObjectMapper();
 
         SimpleModule module =
@@ -19,9 +33,6 @@ public class RCParser {
         module.addDeserializer(TodoDTO.class, new TodoDeserializer());
         module.addDeserializer(AssignableDTO.class, new AssignableDTOSerializer());
         mapper.registerModule(module);
-
-        ClassLoader classloader = Thread.currentThread().getContextClassLoader();
-        URL is = classloader.getResource(path);
-        return mapper.readValue(is, ExerciseDto.class);
+        return mapper;
     }
 }

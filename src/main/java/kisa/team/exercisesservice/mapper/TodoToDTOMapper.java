@@ -15,7 +15,7 @@ public class TodoToDTOMapper {
     public static TodoDTO map(Todo e) {
         if (e.getType().equals(TodoType.RC_SENTENCE_TYPE.toString())) {
             var rcSentence = (RCSentence) e;
-            var assignables = rcSentence.getAssignables().stream().map(AssignableToDTOMapper::map).collect(Collectors.toList());
+            var assignables = rcSentence.getAssignables().stream().map(AssignableMapper::map).collect(Collectors.toList());
             var answerSheet = rcSentence.getAnswerSheet().stream().map(AnswerSheetToDTOMapper::map).collect(Collectors.toList());
             return new RCSentenceDTO(rcSentence.getType(), rcSentence.getPosition(),rcSentence.getId(), assignables, new ArrayList<>(), answerSheet);
         }
