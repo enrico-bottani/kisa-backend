@@ -1,4 +1,4 @@
-package kisa.team.exercisesservice.model.assignable;
+package kisa.team.exercisesservice.model.rc.assignable;
 
 public enum AssignableType {
         RC_ANSWERABLE("RCA"), STRING("STR"),Undefined("UND");;

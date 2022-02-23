@@ -1,8 +1,8 @@
-package kisa.team.exercisesservice.model.assignable;
+package kisa.team.exercisesservice.model.rc.assignable;
 
-import kisa.team.exercisesservice.model.assignable.answerable.RCAnswerable;
-import kisa.team.exercisesservice.model.assignable.answerable.RCAnswerableTests;
-import kisa.team.exercisesservice.model.assignable.constant.StringConstant;
+import kisa.team.exercisesservice.model.rc.assignable.answerable.RCAnswerable;
+import kisa.team.exercisesservice.model.rc.assignable.answerable.RCAnswerableTests;
+import kisa.team.exercisesservice.model.rc.assignable.constant.StringConstant;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

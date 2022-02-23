@@ -1,6 +1,6 @@
 package kisa.team.exercisesservice.mapper;
 
-import kisa.team.exercisesservice.model.Exercise;
+import kisa.team.exercisesservice.model.rc.Exercise;
 import kisa.team.exercisesservice.model.todo.TodoTests;
 import org.assertj.core.util.Lists;
 import org.junit.jupiter.api.Assertions;

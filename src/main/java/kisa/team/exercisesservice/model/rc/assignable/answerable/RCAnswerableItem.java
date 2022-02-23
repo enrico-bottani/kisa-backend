@@ -1,4 +1,4 @@
-package kisa.team.exercisesservice.model.assignable.answerable;
+package kisa.team.exercisesservice.model.rc.assignable.answerable;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

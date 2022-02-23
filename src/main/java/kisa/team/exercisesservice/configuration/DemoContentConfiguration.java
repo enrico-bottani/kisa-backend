@@ -1,11 +1,11 @@
 package kisa.team.exercisesservice.configuration;
 
-import kisa.team.exercisesservice.model.Exercise;
+import kisa.team.exercisesservice.model.rc.Exercise;
 import kisa.team.exercisesservice.model.Teacher;
-import kisa.team.exercisesservice.model.assignable.Assignable;
-import kisa.team.exercisesservice.model.assignable.answerable.RCAnswerable;
-import kisa.team.exercisesservice.model.assignable.answerable.RCAnswerableItem;
-import kisa.team.exercisesservice.model.assignable.constant.StringConstant;
+import kisa.team.exercisesservice.model.rc.assignable.Assignable;
+import kisa.team.exercisesservice.model.rc.assignable.answerable.RCAnswerable;
+import kisa.team.exercisesservice.model.rc.assignable.answerable.RCAnswerableItem;
+import kisa.team.exercisesservice.model.rc.assignable.constant.StringConstant;
 import kisa.team.exercisesservice.model.todo.RCSentence;
 import kisa.team.exercisesservice.model.todo.Todo;
 import kisa.team.exercisesservice.repository.AssignableRepository;

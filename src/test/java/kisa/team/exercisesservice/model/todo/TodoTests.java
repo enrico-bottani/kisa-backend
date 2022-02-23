@@ -1,9 +1,6 @@
 package kisa.team.exercisesservice.model.todo;
 
-import kisa.team.exercisesservice.model.assignable.AssignableTests;
-import kisa.team.exercisesservice.model.assignable.answerable.RCAnswerable;
-import kisa.team.exercisesservice.model.assignable.answerable.RCAnswerableTests;
-import kisa.team.exercisesservice.model.assignable.constant.StringConstant;
+import kisa.team.exercisesservice.model.rc.assignable.AssignableTests;
 import org.assertj.core.util.Lists;
 
 import java.util.ArrayList;

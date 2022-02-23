@@ -30,7 +30,7 @@ public class TodoDeserializer extends StdDeserializer<TodoDTO> {
     public TodoDTO deserialize(JsonParser parser, DeserializationContext deserializer) {
         TodoDTO car = new TodoDTO();
         ObjectCodec codec = parser.getCodec();
-        JsonNode node = null;
+        JsonNode node;
         try {
             node = codec.readTree(parser);
             var position = node.get("position").asInt();
@@ -50,9 +50,6 @@ public class TodoDeserializer extends StdDeserializer<TodoDTO> {
                 rcSentence.setAssignables(Arrays.asList(
                         mapper.treeToValue(
                                 node.get("assignables"), AssignableDTO[].class)));
-                rcSentence.setAnswerMap(Arrays.asList(
-                        mapper.treeToValue(
-                                node.get("answerMap"), AnswerIndexerDTO[].class)));
                 rcSentence.setAnswerSheet(Arrays.asList(
                         mapper.treeToValue(
                                 node.get("answerSheet"), AnswerSheetItemDTO[].class)));

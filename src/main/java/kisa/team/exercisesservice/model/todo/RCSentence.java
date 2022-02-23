@@ -1,7 +1,6 @@
 package kisa.team.exercisesservice.model.todo;
 
-import kisa.team.exercisesservice.model.assignable.Assignable;
-import lombok.AllArgsConstructor;
+import kisa.team.exercisesservice.model.rc.assignable.Assignable;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

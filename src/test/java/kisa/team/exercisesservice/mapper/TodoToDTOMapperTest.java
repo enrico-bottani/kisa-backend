@@ -2,8 +2,7 @@ package kisa.team.exercisesservice.mapper;
 
 import kisa.team.exercisesservice.dto.rc.RCSentenceDTO;
 import kisa.team.exercisesservice.dto.rc.assignables.StringConstantDTO;
-import kisa.team.exercisesservice.model.assignable.AssignableTests;
-import kisa.team.exercisesservice.model.assignable.AssignableType;
+import kisa.team.exercisesservice.model.rc.assignable.AssignableTests;
 import kisa.team.exercisesservice.model.todo.RCSentence;
 import kisa.team.exercisesservice.model.todo.Todo;
 import kisa.team.exercisesservice.model.todo.TodoType;

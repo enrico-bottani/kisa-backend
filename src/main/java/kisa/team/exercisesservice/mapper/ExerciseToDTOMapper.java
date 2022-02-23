@@ -1,7 +1,7 @@
 package kisa.team.exercisesservice.mapper;
 
 import kisa.team.exercisesservice.dto.ExerciseDto;
-import kisa.team.exercisesservice.model.Exercise;
+import kisa.team.exercisesservice.model.rc.Exercise;
 import org.springframework.stereotype.Component;
 
 import java.util.stream.Collectors;

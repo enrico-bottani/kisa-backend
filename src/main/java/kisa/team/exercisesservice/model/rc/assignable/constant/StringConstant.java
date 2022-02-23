@@ -1,13 +1,12 @@
-package kisa.team.exercisesservice.model.assignable.constant;
+package kisa.team.exercisesservice.model.rc.assignable.constant;
 
-import kisa.team.exercisesservice.model.assignable.Assignable;
-import kisa.team.exercisesservice.model.assignable.AssignableType;
+import kisa.team.exercisesservice.model.rc.assignable.Assignable;
+import kisa.team.exercisesservice.model.rc.assignable.AssignableType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Data

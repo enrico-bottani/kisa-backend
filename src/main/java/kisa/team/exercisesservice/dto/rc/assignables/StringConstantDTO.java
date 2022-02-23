@@ -1,7 +1,6 @@
 package kisa.team.exercisesservice.dto.rc.assignables;
 
-import kisa.team.exercisesservice.dto.rc.assignables.AssignableDTO;
-import kisa.team.exercisesservice.model.assignable.AssignableType;
+import kisa.team.exercisesservice.model.rc.assignable.AssignableType;
 import lombok.*;
 
 @Getter

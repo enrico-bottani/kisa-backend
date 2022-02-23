@@ -1,5 +1,6 @@
 package kisa.team.exercisesservice.model;
 
+import kisa.team.exercisesservice.model.rc.Exercise;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

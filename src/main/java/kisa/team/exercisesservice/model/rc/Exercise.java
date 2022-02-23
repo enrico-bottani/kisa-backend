@@ -1,4 +1,4 @@
-package kisa.team.exercisesservice.model;
+package kisa.team.exercisesservice.model.rc;
 
 import kisa.team.exercisesservice.model.todo.Todo;
 import lombok.AllArgsConstructor;

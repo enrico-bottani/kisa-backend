@@ -1,7 +1,7 @@
-package kisa.team.exercisesservice.model.assignable.answerable;
+package kisa.team.exercisesservice.model.rc.assignable.answerable;
 
-import kisa.team.exercisesservice.model.assignable.Assignable;
-import kisa.team.exercisesservice.model.assignable.AssignableType;
+import kisa.team.exercisesservice.model.rc.assignable.Assignable;
+import kisa.team.exercisesservice.model.rc.assignable.AssignableType;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
